@@ -1,0 +1,19 @@
+#promt {
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(91, 28, 91, 0.772);
+}
+#promt {
+    position: absolute;
+
+}
+  a {
+      margin-left: 10%;
+  }
+  .hide {
+      display: none;
+  }
+ 
