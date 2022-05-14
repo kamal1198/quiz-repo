@@ -16,4 +16,16 @@
   .hide {
       display: none;
   }
- 
+  #startbtn {
+    background-color: rgb(109, 47, 109);
+    margin-left: 28%;
+    padding: 12px 30px;
+    font-size: 25px;
+    color:aliceblue;
+}
+h1 {
+  margin-left: 18%;
+}
+P {
+    margin-left: 5%;
+  }
