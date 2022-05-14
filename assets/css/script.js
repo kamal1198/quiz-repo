@@ -1,7 +1,7 @@
 // use start button to load first question
 var startbutton = document.getElementById("startbtn");
 var quiz = document.getElementById("quiz");
-let currQ = 1;
+let currQ = 0;
 startbutton.addEventListener("click", function () {
     var promt = document.getElementById("promt");
 
@@ -54,6 +54,8 @@ function buildquestion() {
                 console.log("wrong");
                 // timer-=10;   
             }
+            currQ = currQ + 1;
+buildquestion();
         }
         
         var time = question.length * 15;
