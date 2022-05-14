@@ -1,6 +1,7 @@
 // use start button to load first question
 var startbutton = document.getElementById("startbtn");
 var quiz = document.getElementById("quiz");
+let currQ = 1;
 startbutton.addEventListener("click", function () {
     var promt = document.getElementById("promt");
 
@@ -40,14 +41,14 @@ var question = [
 
 function buildquestion() {
     var questiontext = document.getElementById("questiontext");
-    questiontext.textContent = question[0].text;
+    questiontext.textContent = question[currQ].text;
     var buttonbox = document.getElementById("buttonbox");
-    question[0].choices.forEach(function (choice) {
+    question[currQ].choices.forEach(function (choice) {
         var choicebtn = document.createElement("button");
         choicebtn.textContent = choice;
         choicebtn.setAttribute("value", choice)
         choicebtn.onclick = function () {
-            if (this.value === question[0].answer) {
+            if (this.value === question[currQ].answer) {
                 console.log("correct");
             } else {
                 console.log("wrong");
