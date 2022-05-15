@@ -3,7 +3,7 @@ var startbutton = document.getElementById("startbtn");
 var buttonbox = document.getElementById('buttonbox');
 var quiz = document.getElementById("quiz");
 let currQ = 0;
-
+localStorage.setItem("highscores","68")
 startbutton.addEventListener("click", function () {
     var promt = document.getElementById("promt");
 
@@ -44,6 +44,7 @@ var question = [
 function buildquestion() {
     buttonbox.innerHTML = '';
     var questiontext = document.getElementById("questiontext");
+    console.log(currQ)
     questiontext.textContent = question[currQ].text;
     
     question[currQ].choices.forEach(function (choice) {
@@ -78,13 +79,7 @@ buildquestion();
         buttonbox.appendChild(choicebtn)
     });
 }
-if (currQ > questions.length) {
-    // All done will append last page with user stats
-    allDone();
-    createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
-} else {
-    render(currQ);
-}
+
 
 
 
