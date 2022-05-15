@@ -78,12 +78,12 @@ buildquestion();
         buttonbox.appendChild(choicebtn)
     });
 }
-if (questionIndex >= questions.length) {
+if (currQ > questions.length) {
     // All done will append last page with user stats
     allDone();
     createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
 } else {
-    render(questionIndex);
+    render(currQ);
 }
 
 
