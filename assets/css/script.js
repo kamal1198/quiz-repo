@@ -1,7 +1,9 @@
 // use start button to load first question
 var startbutton = document.getElementById("startbtn");
+var buttonbox = document.getElementById('buttonbox');
 var quiz = document.getElementById("quiz");
 let currQ = 0;
+
 startbutton.addEventListener("click", function () {
     var promt = document.getElementById("promt");
 
@@ -40,9 +42,10 @@ var question = [
 ];
 
 function buildquestion() {
+    buttonbox.innerHTML = '';
     var questiontext = document.getElementById("questiontext");
     questiontext.textContent = question[currQ].text;
-    var buttonbox = document.getElementById("buttonbox");
+    
     question[currQ].choices.forEach(function (choice) {
         var choicebtn = document.createElement("button");
         choicebtn.textContent = choice;
@@ -72,12 +75,15 @@ buildquestion();
         }, 1000);
 
         
-  
-  
-     
-
         buttonbox.appendChild(choicebtn)
     });
+}
+if (questionIndex >= questions.length) {
+    // All done will append last page with user stats
+    allDone();
+    createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
+} else {
+    render(questionIndex);
 }
 
 

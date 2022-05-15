@@ -29,3 +29,16 @@ h1 {
 P {
     margin-left: 5%;
   }
+  
+  #quiz {
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 500px;
+    height: 500px;
+  }
+  
+  #quiz p {
+    position: relative;
+bottom: 300px; left: 700px;
+  }
