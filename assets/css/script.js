@@ -3,7 +3,7 @@ var startbutton = document.getElementById("startbtn");
 var buttonbox = document.getElementById('buttonbox');
 var quiz = document.getElementById("quiz");
 let currQ = 0;
-localStorage.setItem("highscores","68")
+localStorage.setItem("highscores", "68")
 startbutton.addEventListener("click", function () {
     var promt = document.getElementById("promt");
 
@@ -46,7 +46,7 @@ function buildquestion() {
     var questiontext = document.getElementById("questiontext");
     console.log(currQ)
     questiontext.textContent = question[currQ].text;
-    
+
     question[currQ].choices.forEach(function (choice) {
         var choicebtn = document.createElement("button");
         choicebtn.textContent = choice;
@@ -59,26 +59,25 @@ function buildquestion() {
                 // timer-=10;   
             }
             currQ = currQ + 1;
-buildquestion();
+            if (currQ < question.length) {
+                buildquestion()
+            }
         }
-        
-        var time = question.length * 15;
+        // var time = question.length * 15;
         const timerInt = setInterval(function () {
             const timerEl = document.getElementById('timer');
             timerEl.innerText = time--;
-            if (time <= 0) { 
-                time=0;
-                clearInterval(timerInt); 
-                // TODO display endscreen
-        
-
+            if (time <= 0) {
+                time = 0;
+                clearInterval(timerInt);
             }
         }, 1000);
 
-        
+
         buttonbox.appendChild(choicebtn)
     });
 }
+
 
 
 
