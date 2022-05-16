@@ -12,6 +12,17 @@ startbutton.addEventListener("click", function () {
     promt.setAttribute("class", "hide")
     quiz.removeAttribute("class");
     buildquestion()
+    var time = question.length * 15;
+        // var time = question.length*15;
+        console.log(time);
+        const timerInt = setInterval(function () {
+            const timerEl = document.getElementById('timer');
+            timerEl.innerText = time--;
+            if (time <= 0) {
+                time = 0;
+                clearInterval(timerInt);
+            }
+        }, 1000);
 })
 var question = [
     {
@@ -40,7 +51,6 @@ var question = [
         answer: "a"
     },
 ];
-
 function buildquestion() {
     buttonbox.innerHTML = '';
     var questiontext = document.getElementById("questiontext");
@@ -56,24 +66,16 @@ function buildquestion() {
                 console.log("correct");
             } else {
                 console.log("wrong");
-                // timer-=10;   
+                timer-=10;   
             }
             currQ = currQ + 1;
             if (currQ < question.length) {
                 buildquestion()
             }
+            //display scores
+            
         }
-        // var time = question.length * 15;
-        const timerInt = setInterval(function () {
-            const timerEl = document.getElementById('timer');
-            timerEl.innerText = time--;
-            if (time <= 0) {
-                time = 0;
-                clearInterval(timerInt);
-            }
-        }, 1000);
-
-
+    
         buttonbox.appendChild(choicebtn)
     });
 }
