@@ -102,9 +102,7 @@ score:numberscores*timebonus
     }
     highscorearray.push(userscore)
     console.log(highscorearray)
-    //get users initial
-    //save highscore in local storage 
-    localStorage.setItem("highscores",JSON.stringify(highscorearray))
+    
 }
 
 
